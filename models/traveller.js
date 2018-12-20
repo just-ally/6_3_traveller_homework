@@ -36,8 +36,33 @@ Traveller.prototype.getUniqueModesOfTransport = function () {
   const allModes = this.journeys.map((journey) => {
     return journey.transport;
   });
-  const uniqueModes = Array.from(new Set(allModes))
-  return uniqueModes
+  return uniqueModes = [...new Set(allModes)]
 }
+
+//   return[...new Set(this.journeys.map((journey) => {
+//     return journey.transport;
+//   }))]
+// };
+
+
+// Traveller.prototype.getUniqueModesOfTransport = function () {
+//   let uniqueList = [];
+//   this.journeys.forEach((journey) => {
+//     if (!uniqueList.includes(journey.transport)){
+//       uniqueList.push(journey.transport)
+//     }
+//   });
+//   return uniqueList;
+// }
+//
+//
+// Traveller.prototype.getUniqueModesOfTransport = function () {
+//   let transportAllTypes = this.journeys.map((journey) => {
+//     return journey.transport;
+//   })
+//   return transportAllTypes.filter(function(value, index, self){
+//     return self.indexOf(value) === index;
+//   });
+// };
 
 module.exports = Traveller;
